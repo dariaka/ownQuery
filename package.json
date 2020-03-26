@@ -1,0 +1,29 @@
+{
+  "name": "ownquery",
+  "version": "1.0.0",
+  "description": "An attempt to write own JavaScript DOM library as an exercise",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariaka/ownQuery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dariaka/ownQuery/issues"
+  },
+  "homepage": "https://github.com/dariaka/ownQuery#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
