@@ -1,19 +1,26 @@
-import { isSelector, isHTMLTag, isDOMNode } from "./utils/check";
+import ownQuery from "./Library/ownQuery.js";
+import { isSelector, isHTMLTag, isDOMNode } from "./Utils/Check.js";
+import { findElements, createElement } from "./Utils/Element.js";
+
 
 function init(param) {
     let nodes = null;
 
-    if ( isSelector(param) ) {
-        console.log("selector");
-        // nodes = findElements(param);
-    } else if ( isHTMLTag(param) ) {
-        console.log("html tag");
-        // nodes = createElement(param);
-    } else if ( isDOMNode(param) ) {
-        console.log("dom node");
-        // nodes = param;
+    if( isSelector(param) ) {
+        nodes = findElements(param);
+    } else if( isHTMLTag(param) ) {
+        nodes = createElement(param);
+    } else if( isDOMNode(param) ) {
+        nodes = param;
     }
+
+    return ownQuery.create(nodes);
 
 }
 
 window.ownQuery = init;
+
+
+//
+import test from "./test.js"
+test();

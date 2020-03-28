@@ -1,22 +1,26 @@
 export function isSelector(value) {
     return (
-        typeof value === "string" && 
-        !isHTMLTag(value) && 
+        typeof value === "string" &&
+        !isHTMLTag(value) &&
         !isDOMNode(value)
     );
 }
 
 export function isHTMLTag(value) {
     return (
-        typeof value === "string" && 
-        value.startsWith("<") && 
-        value.endsWith(">") 
+        typeof value === "string" &&
+        value.startsWith("<") &&
+        value.endsWith(">")
     );
 }
 
 export function isDOMNode(value) {
     return (
-        typeof value === "object" && 
-        value instanceof Element 
+        typeof value === "object" &&
+        value instanceof Element
     );
+}
+
+export function isObject(value) {
+    return value && value.toString() === "[object Object]";
 }
