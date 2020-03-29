@@ -20,6 +20,7 @@ export default {
         // so when one wants to chain methods, like that:
         // node.addClass("red").css("font-size", "20px");
         // second method won't work
+        // error says that a method cannot work on "undefined"
     },
 
     removeClass(className) {
