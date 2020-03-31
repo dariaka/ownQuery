@@ -25,7 +25,7 @@ module.exports = {
                     loader: "babel-loader",
                     options: {
                         plugins: ["@babel/plugin-transform-runtime", "add-module-exports"],
-                        presets: [["@babel/preset-env", { "modules": false }]]
+                        presets: [["@babel/preset-env", { "modules": "umd" }]]
                     }
                 }
             }
