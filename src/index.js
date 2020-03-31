@@ -1,9 +1,11 @@
 import ownQuery from "./Library/ownQuery.js";
 import { isSelector, isHTMLTag, isDOMNode } from "./Utils/Check.js";
 import { findElements, createElement } from "./Utils/Element.js";
-
+import Ajax from "./Library/Ajax.js";
+import { staticMixin } from "./Utils/Mixin.js";
 
 function init(param) {
+    
     let nodes = null;
 
     if( isSelector(param) ) {
@@ -18,9 +20,10 @@ function init(param) {
 
 }
 
+staticMixin(init, Ajax);
+
 window.ownQuery = init;
 
-
-//
+// TEST
 import test from "./test.js"
 test();

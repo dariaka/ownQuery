@@ -1,11 +1,14 @@
 export default function() {
     let lis = ownQuery("li");
 
+    // CONTENT
     // lis.html("<b>new</b> text")
     // console.log(lis.html());
 
-    lis.toggleClass("red").css("font-size", "20px");
+    // ATTRIBUTES
+    lis.addClass("red").css({"text-decoration":"underline", "cursor":"pointer"});
 
+    // EVENTS
     lis.on("click", function() {
         console.log(this);
 
@@ -22,6 +25,24 @@ export default function() {
         */
     })
 
+    // AJAX
+    // ownQuery("button").on("click", function() {
 
+    //     ownQuery.get("https://jsonplaceholder.typicode.com/users")
+    //         .then(data => ownQuery("pre").text(data))
+    //         .catch(err => ownQuery("pre").text(err.mesage));
+
+    // })
+
+    ownQuery("button").on("click", function() {
+
+        ownQuery.post("https://jsonplaceholder.typicode.com/users", {
+            firstName: "Jan",
+            lastName: "Kowalski"
+        })
+            .then(data => ownQuery("pre").text(data))
+            .catch(err => ownQuery("pre").text(err.mesage));
+
+    })
 
 }
